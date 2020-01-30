@@ -1,3 +1,7 @@
+/* eslint-disable indent */
+/* eslint-disable no-unused-vars */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-redeclare */
 'use strict';
 
 var CLOUD_WIDTH = 420;
@@ -41,29 +45,29 @@ window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
-  var randColor = function() {
-    var b = Math.floor (Math.random () * (90 - 10) + 10);
+  var randColor = function () {
+    var b = Math.floor(Math.random() * (90 - 10) + 10);
     return 'hsl(240,' + b + '% ,' + b + '% )';
-};
+  };
 
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < players.length; i++) {
     ctx.fillStyle = 'hsl(0,0%,0%)';
     ctx.fillText(players[i], COLUMN_X + [i] * (BAR_WIDTH + COLUMN_GAP), COLUMN_Y);
-    ctx.fillText(Math.floor(times[i]), COLUMN_X + [i] * (BAR_WIDTH + COLUMN_GAP), COLUMN_Y - TEXT_HEIGHT - FONT_GAP- ((BAR_HEIGHT-FONT_GAP) * times[i]) / maxTime  );
+    ctx.fillText(Math.floor(times[i]), COLUMN_X + [i] * (BAR_WIDTH + COLUMN_GAP), COLUMN_Y - TEXT_HEIGHT - FONT_GAP - ((BAR_HEIGHT - FONT_GAP) * times[i]) / maxTime);
     if (players[i] == 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       ctx.fillStyle = randColor();
     }
-    ctx.fillRect(COLUMN_X + [i] * (BAR_WIDTH + COLUMN_GAP), (COLUMN_Y - TEXT_HEIGHT) - ((BAR_HEIGHT - FONT_GAP) * times[i]) / maxTime, BAR_WIDTH, ((BAR_HEIGHT- FONT_GAP) * times[i]) / maxTime )
+    ctx.fillRect(COLUMN_X + [i] * (BAR_WIDTH + COLUMN_GAP), (COLUMN_Y - TEXT_HEIGHT) - ((BAR_HEIGHT - FONT_GAP) * times[i]) / maxTime, BAR_WIDTH, ((BAR_HEIGHT - FONT_GAP) * times[i]) / maxTime);
   }
 
 };
 
 var window = {
-  renderStatistics: function (ctx, names, times){}
+  renderStatistics: function (ctx, names, times) {}
 };
 
 window.renderStatistics = function (ctx) {
@@ -73,4 +77,4 @@ window.renderStatistics = function (ctx) {
   ctx.fillStyle = '#fff';
   ctx.fillRect(100, 50, 420, 270);
 
-}
+};
