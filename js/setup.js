@@ -19,7 +19,7 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 var WIZARD_COUNT = 4;
 
 var getRandomValue = function (arr) {
-  return arr[Math.floor(Math.random() * (arr.length - 1) + 1)];
+  return arr[Math.floor(Math.random() * arr.length)];
 };
 
 var wizards = [];
