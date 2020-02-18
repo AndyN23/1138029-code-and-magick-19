@@ -4,7 +4,7 @@
   document.querySelector('.setup-similar').classList.remove('hidden');
   var similarListElement = setup.querySelector('.setup-similar-list');
   var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
-// Создаем массив с магами и заполняем его данными
+  // Создаем массив с магами и заполняем его данными
   var wizards = [];
   for (var i = 0; i < window.const.WIZARD_COUNT; i++) {
     wizards.push(
@@ -13,7 +13,7 @@
           eyesColor: window.utils.getRandomValue(window.const.EYES_COLOR)
         });
   }
-// Клонируем магов совсеми характеристиками и заполняем их данными
+  // Клонируем магов совсеми характеристиками и заполняем их данными
   var renderWizard = function (wizard) {
     var wizardElement = similarWizardTemplate.cloneNode(true);
 
@@ -22,7 +22,7 @@
     wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
     return wizardElement;
   };
-// создаем фрагмент из заполненного массива
+  // создаем фрагмент из заполненного массива
   var fragment = document.createDocumentFragment();
   for (i = 0; i < wizards.length; i++) {
     fragment.appendChild(renderWizard(wizards[i]));

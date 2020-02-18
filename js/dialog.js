@@ -4,7 +4,7 @@
   var setup = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
-// Открытие и закрытие диалогового окна с клика мыши и клавиатуры
+  // Открытие и закрытие диалогового окна с клика мыши и клавиатуры
   var onPopupEscPress = function (evt) {
     window.utils.isEscEvent(evt, closePopup);
   };
@@ -28,7 +28,7 @@
   setupClose.addEventListener('keydown', function (evt) {
     window.utils.isEnterEvent(evt, closePopup);
   });
-// Проверяет на валидность заполнение инпута
+  // Проверяет на валидность заполнение инпута
   var userNameInput = setup.querySelector('.setup-user-name');
   userNameInput.addEventListener('invalid', function () {
     if (userNameInput.validity.tooShort) {
@@ -44,17 +44,17 @@
 
   userNameInput.addEventListener('input', function (evt) {
     var target = evt.target;
-    if (target.value.length < MIN_NAME_LENGTH) {
+    if (target.value.length < window.const.MIN_NAME_LENGTH) {
       target.setCustomValidity(
           'Имя должно состоять минимуи из ' +
-        MIN_NAME_LENGTH +
+        window.const.MIN_NAME_LENGTH +
         '-х символов'
       );
     } else {
       target.setCustomValidity('');
     }
   });
-// Перемещение диалогового окна за мышкой
+  // Перемещение диалогового окна за мышкой
   var dialogHandler = setup.querySelector('.upload');
 
   dialogHandler.addEventListener('mousedown', function (evt) {
@@ -92,14 +92,14 @@
       document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        var onClickPreventDefault = function (evt) {
+        var onClickPreventDefault = function () {
           evt.preventDefault();
-          dialogHandler.removeEventListener ('click', onClickPreventDefault)
+          dialogHandler.removeEventListener('click', onClickPreventDefault);
         };
-        dialogHandler.addEventListener('click', onClickPreventDefault)
+        dialogHandler.addEventListener('click', onClickPreventDefault);
       }
     };
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
-}) ();
+})();

@@ -21,4 +21,4 @@
     setupFireballWrap.querySelector('input[name=fireball-color]').value = setupFireballWrap.style.backgroundColor;
   });
 
-}) ();
+})();
