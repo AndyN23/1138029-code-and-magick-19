@@ -13,6 +13,9 @@
   var ENTER_KEY = 'Enter';
   var MIN_NAME_LENGTH = 2;
 
+  var URL = 'https://js.dump.academy/code-and-magick.';
+  var URL_DATA = 'https://js.dump.academy/code-and-magick/data';
+
   window.const = {
     WIZARD_NAMES: WIZARD_NAMES,
     WIZARD_SURNAMES: WIZARD_SURNAMES,
@@ -22,6 +25,8 @@
     WIZARD_COUNT: WIZARD_COUNT,
     ESC_KEY: ESC_KEY,
     ENTER_KEY: ENTER_KEY,
-    MIN_NAME_LENGTH: MIN_NAME_LENGTH
+    MIN_NAME_LENGTH: MIN_NAME_LENGTH,
+    URL: URL,
+    URL_DATA: URL_DATA
   };
 })();
